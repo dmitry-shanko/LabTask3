@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.example.org/Products"
+	elementFormDefault="unqualified" xmlns:products="http://www.example.org/Products">
+
+	<element name="categoryList">
+		<complexType>
+			<sequence>
+				<element name="category" type="products:category" maxOccurs="unbounded"
+					minOccurs="1" />
+			</sequence>
+		</complexType>
+	</element>
+
+	<complexType name="category">
+		<sequence>
+			<element name="subcategory" type="products:subcategory"
+				maxOccurs="unbounded" minOccurs="1" />
+		</sequence>
+		<attribute name="name" use="required" />
+	</complexType>
+
+	<complexType name="subcategory">
+		<sequence>
+			<element name="product" type="products:product" maxOccurs="unbounded"
+				minOccurs="1" />
+		</sequence>
+		<attribute name="name" use="required" />
+	</complexType>
+
+	<complexType name="product">
+		<sequence>
+			<element name="provider" type="products:provider" minOccurs="1" maxOccurs="1"/>
+			<element name="model" type="products:model" minOccurs="1" maxOccurs="1"/>
+			<element name="color" type="products:color" minOccurs="1" maxOccurs="1"/>
+			<element name="date" type="products:date" minOccurs="1" maxOccurs="1"/>			
+			<choice>
+				<element name="price" type="products:price" minOccurs="1" maxOccurs="1"/>
+				<element name="notInStock" type="products:notInStock" minOccurs="1" maxOccurs="1"/>
+			</choice>
+		</sequence>
+		<attribute name="name" use="required" />
+	</complexType>
+
+	<simpleType name="model">
+		<restriction base="string" />
+	</simpleType>
+
+	<simpleType name="date">
+		<restriction base="string">
+			<pattern
+				value="(0[1-9]|[12][0-9]|3[01])[-](0[1-9]|1[012])[-]((19|20)[0-9]{2})" />
+		</restriction>
+	</simpleType>
+
+	<simpleType name="provider">
+		<restriction base="string" />
+	</simpleType>
+
+	<simpleType name="color">
+		<restriction base="string" />
+	</simpleType>
+
+	<simpleType name="price">
+		<restriction base="double" />
+	</simpleType>
+
+	<simpleType name="notInStock">
+		<restriction base="string" />
+	</simpleType>
+
+</schema>

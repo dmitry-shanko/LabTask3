@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE categoryList SYSTEM "products.dtd">
+
+<categoryList xmlns:products="http://www.example.org/Products"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.example.org/Products products.xsd">
+
+	<category name="Category1">
+		<subcategory name="Subcategory11">
+			<product name="Product111">
+				<provider>Provider111</provider>
+				<model>Model111</model>
+				<color>Color111</color>
+				<date>01-01-2001</date>
+				<notInStock></notInStock>
+			</product>
+			<product name="Product112">
+				<provider>Provider112</provider>
+				<model>Model112</model>
+				<color>Color112</color>
+				<date>03-03-2003</date>
+				<price>101.01</price>
+			</product>
+			<product name="Product113">
+				<provider>Provider113</provider>
+				<model>Model113</model>
+				<color>Color113</color>
+				<date>03-05-2003</date>
+				<price>113.0</price>
+			</product>
+		</subcategory>
+		<subcategory name="Subcategory12">
+			<product name="Product121">
+				<provider>Provider121</provider>
+				<model>Model121</model>
+				<color>Color121</color>
+				<date>25-12-2001</date>
+				<price>121.121</price>
+			</product>
+			<product name="Product122">
+				<provider>Provider122</provider>
+				<model>Model122</model>
+				<color>Color122</color>
+				<date>11-12-1990</date>
+				<notInStock></notInStock>
+			</product>
+			<product name="Product123">
+				<provider>Provider123</provider>
+				<model>Model123</model>
+				<color>Color123</color>
+				<date>03-09-2099</date>
+				<price>123.0</price>
+			</product>
+		</subcategory>
+	</category>
+	<category name="Category2">
+		<subcategory name="Subcategory21">
+			<product name="Product211">
+				<provider>Provider211</provider>
+				<model>Model211</model>
+				<color>Color211</color>
+				<date>01-01-2001</date>
+				<notInStock></notInStock>
+			</product>
+			<product name="Product212">
+				<provider>Provider212</provider>
+				<model>Model212</model>
+				<color>Color212</color>
+				<date>03-03-2003</date>
+				<price>101.01</price>
+			</product>
+			<product name="Product213">
+				<provider>Provider213</provider>
+				<model>Model213</model>
+				<color>Color213</color>
+				<date>03-05-2003</date>
+				<price>113.0</price>
+			</product>
+		</subcategory>
+	</category>
+</categoryList>

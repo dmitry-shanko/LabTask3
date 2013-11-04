@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!ELEMENT categoryList (category+)>
+<!ATTLIST categoryList
+  xmlns:products CDATA #REQUIRED>
+<!ATTLIST categoryList
+  xmlns:xsi CDATA #REQUIRED>
+<!ATTLIST categoryList
+  xsi:schemaLocation CDATA #REQUIRED>
+  
+<!ELEMENT category (subcategory+)>
+<!ATTLIST category
+  name CDATA #REQUIRED>
+  
+<!ELEMENT subcategory (product+)>
+<!ATTLIST subcategory
+  name CDATA #REQUIRED>
+  
+<!ELEMENT product (provider, model, color, date, (price | notInStock))>
+<!ATTLIST product
+  name CDATA #REQUIRED>
+<!ELEMENT provider (#PCDATA) >
+<!ELEMENT model (#PCDATA) >
+<!ELEMENT color (#PCDATA) >
+<!ELEMENT date (#PCDATA) >
+<!ELEMENT price (#PCDATA) >
+<!ELEMENT notInStock (#PCDATA) >
+ 

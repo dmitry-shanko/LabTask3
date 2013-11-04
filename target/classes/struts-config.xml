@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC
+          "-//Apache Software Foundation//DTD Struts Configuration 1.3//EN"
+          "http://struts.apache.org/dtds/struts-config_1_3.dtd">
+<struts-config>
+
+	<form-beans>
+		<form-bean name="productForm"
+			type="com.epam.xmlapp.presentation.form.ProductForm" />
+	</form-beans>
+
+	<global-forwards>
+		<forward name="mainpage" path="/products.do" />
+		<forward name="productList" path="productlistpage" />
+		<forward name="parser" path="parserchoosepage" />
+		<forward name="error" path="producterrorpage" />
+	</global-forwards>
+
+	<action-mappings>
+		<action path="/index" forward="/products.do" />
+
+		<action path="/parser"
+			type="com.epam.xmlapp.presentation.action.ProductAction" name="productForm"
+			validate="false" scope="session" parameter="parser">
+		</action>
+		
+		<action path="/changeparser"
+			type="com.epam.xmlapp.presentation.action.ProductAction" name="productForm"
+			validate="false" scope="session" parameter="changeParser">
+		</action>
+
+		<action path="/products"
+			type="com.epam.xmlapp.presentation.action.ProductAction" name="productForm"
+			validate="false" parameter="productsList">
+		</action>
+
+		<action path="/back"
+			type="com.epam.xmlapp.presentation.action.ProductAction" name="productForm"
+			parameter="back">
+		</action>
+
+		<action path="/error"
+			type="com.epam.xmlapp.presentation.action.ProductAction" name="productForm"
+			parameter="error">
+		</action>
+
+	</action-mappings>
+
+	<controller
+		processorClass="org.springframework.web.struts.DelegatingTilesRequestProcessor" />
+
+	<message-resources parameter="jsp.MessageResources"
+		null="false" />
+
+	<!-- Spring Struts plugin -->
+	<plug-in className="org.springframework.web.struts.ContextLoaderPlugIn">
+		<set-property property="contextConfigLocation" value="classpath:/spring-config.xml" />
+	</plug-in>
+	<plug-in className="org.apache.struts.tiles.TilesPlugin">
+		<set-property property="definitions-config" value="/WEB-INF/Tiles/tiles-defs.xml" />
+		<set-property property="moduleAware" value="false" />
+	</plug-in>
+
+</struts-config>
